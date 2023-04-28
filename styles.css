@@ -44,7 +44,7 @@ p {
     font-weight: bold;
 }
 
-.btn {
+.new-quote-btn {
     display: flex;
     justify-content: center;
     padding-top: 25px;
@@ -57,4 +57,25 @@ button {
     background-color: #D8BFD8;
     color: #4B0082;
     border: transparent;
+}
+
+/*Desktop*/
+@media only screen and (min-width: 768px) {
+
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 25px;
+    }
+
+    button {
+        font-size: 25px;
+    }
+}
+
+/*Tablet*/
+@media only screen and (min-width: 480px) {
+
 }

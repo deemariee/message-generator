@@ -1,28 +1,15 @@
-//Creates a reference to the quote button on page
-document.querySelector('.new-quote-btn');
+const newQuoteButton = document.getElementById("generate");
+const quoteContainer = document.getElementById("quote");
 
-//Stores the reference to button in a variable
-const newQuoteBtn = document.querySelector('.new-quote-btn');
-
-//'Click' - event we need to listen for. 'getNewQuote' - function invoked when 'click' event is triggered on 'getNewQuote'
-newQuoteBtn.addEventListener('click', getNewQuote);
-
-function getNewQuote() {
-    console.log("quote button was clicked");
+// Fetch a new quote from the API
+function getQuote() {
+    fetch("https://api.quotable.io/random")
+        .then(response => response.json())
+        .then(data => {
+            quoteContainer.innerText = `"${data.content}" - ${data.author}`;
+        })
+        .catch(error => console.error(error));
 }
 
-const url('https://type.fit/api/quotes');
-
-async function getNewQuote() {
-    try {
-        const response = await fetch(url)
-        if (!response.ok) {
-            throw Error(response.statusText)
-        }
-    }
-    const json = await response.json();
-    console.log(json.message);
-} catch (err) {
-    console.log(err)
-    alert('Failed to fetch new quote');
-}
+// Generate a new quote when the button is clicked
+newQuoteButton.addEventListener("click", getQuote);

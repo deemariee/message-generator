@@ -23,8 +23,9 @@ body {
     background-color: #9400D3;
     color: #fff;
     padding: 30px;
-    margin: 12px;
+    margin: 50px;
     box-shadow: 10px 10px #4B0082;
+    text-align: center;
 }
 
 h1 {
@@ -40,6 +41,12 @@ p {
     padding-bottom: 20px;
 }
 
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 button {
     padding: 5px;
     font-weight: bold;
@@ -49,18 +56,66 @@ button {
     border: transparent;
 }
 
-.btn-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/*Desktop*/
 @media only screen and (min-width: 768px) {
-    
+    .content {
+        height: 600px;
+        width: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 25px;
+        margin-bottom: 50px;
+    }
+
+    button {
+        font-size: 20px;
+    }
 }
 
-/*Tablet*/
-@media only screen and (min-width: 480px) {
+@media only screen and (max-width: 767px) and (min-width: 481px) {
+    .content {
+        height: 400px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 
+    h1 {
+        font-size: 35px;
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .content {
+        height: 300px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    p {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
 }
